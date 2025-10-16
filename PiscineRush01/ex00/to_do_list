@@ -1,0 +1,40 @@
+il faudra faire d'abord toutes les conditions qui permettent de remplir les cases 1 à une.
+une fois qu'on a repete toutes les fonctions qui permettent de remplir a coup sur il faudra ajouter aleatoirement un chiffre possible, sauvegarder la matrice?, et reprendre le programme avec les placement que cela nous rend possible. Si l'on bloque a une etape et qu'il est impossible de continuer en respectant lees conditions il faut revenir a la matrice au moment ou on a fait le choix "aléatoire" et faire un choix different autant de fois que necessaire jusqu'a trouver une solution qui fonctionne.
+
+soit on reprend la matice sauvegardée soit on remonte de X etapes en arrire pour ne pas avoir plain de copies de matrice, reste a voir le plus simple a faire sans faire laguer l'ordi avec 100000 matrices en memoire
+
+je laisse ce message et d'autres commantaire au cas ou je me leve pas emain matin, gl&hf
+
+
+
+clue_1 correspond au chiffre 1 dans le argv	on le fait 1 fois au debut seulement
+
+clue_2 correspond au 4				on le fait 1 fois au debut seulement
+
+clue_3 n'est pas fait
+
+
+
+placement_1	si un chiffre est present size-1 fois dans la matrice, on peut le mettre dans la derniere case
+
+
+placement_2	si il y a un size-1 chiffre dans la line/colonne, on met celui qui manque
+
+
+placement_3	si on a colxtop(=A) + colxbottom(=B)= size + 1,
+on peut placer le max en colonne x ligne A en partant du haut, pareil pour les cotés
+
+
+placement_4	si on a size placé au bout de ligne et un parametre = 2, 
+on peut placer le size-1 au debut de ladite ligne.
+ 
+ -> ça donne un truc de genre :
+ if colxtop == 2 && matrice[x][size-1]
+ 	alors matrice[x][0] = size - 1 + '0'//mettre en char
+ 
+ placement_5	chiffre max a la case X -> size - parametre + 1 + X
+ /*si on a parametre 3 : 
+ 	le max a la 1ere case = 2
+ 	le max a la 2ere case = 3
+ 	le max a la 4ere case = 4
+ */
